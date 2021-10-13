@@ -1,0 +1,44 @@
+{
+  "name": "workenvironment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server ./dist",
+    "build": "rm -rf dist && mkdir dist && cp -r src/assets dist && stylus src/css/ -o dist/css/bundle.css && tsc src/js/app.ts --outFile dist/js/bundle.js && cp src/index.html dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "stylelint src/css/**/*.styl --custom-syntax stylelint-plugin-stylus/custom-syntax && eslint ./src/js",
+    "style:lint": "stylelint src/css/**/*.styl --custom-syntax stylelint-plugin-stylus/custom-syntax",
+    "style:fix": "stylelint src/css/**/*.styl --fix",
+    "js:lint": "eslint ./src/js",
+    "js:fix": "eslint ./src/js --fix",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Artem-Marinskih/workEnvironment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Artem-Marinskih/workEnvironment/issues"
+  },
+  "homepage": "https://github.com/Artem-Marinskih/workEnvironment#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "http-server": "^13.0.2",
+    "husky": "^7.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-plugin-stylus": "^0.11.0",
+    "stylus": "^0.55.0",
+    "typescript": "^4.4.4"
+  }
+}
