@@ -7,8 +7,8 @@
     "start": "http-server ./dist",
     "build": "rm -rf dist && mkdir dist && cp -r src/assets dist && stylus src/css/ -o dist/css/bundle.css && tsc src/js/app.ts --outFile dist/js/bundle.js && cp src/index.html dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "stylelint src/css/**/*.styl && eslint ./src/js",
-    "style:lint": "stylelint src/css/**/*.styl",
+    "lint": "stylelint src/css/**/*.styl --custom-syntax stylelint-plugin-stylus/custom-syntax && eslint ./src/js",
+    "style:lint": "stylelint src/css/**/*.styl --custom-syntax stylelint-plugin-stylus/custom-syntax",
     "style:fix": "stylelint src/css/**/*.styl --fix",
     "js:lint": "eslint ./src/js",
     "js:fix": "eslint ./src/js --fix",
@@ -37,6 +37,7 @@
     "husky": "^7.0.2",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
+    "stylelint-plugin-stylus": "^0.11.0",
     "stylus": "^0.55.0",
     "typescript": "^4.4.4"
   }
